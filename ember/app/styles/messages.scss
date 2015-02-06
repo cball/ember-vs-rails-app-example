@@ -6,6 +6,10 @@
   a.read {
     color: #999;
   }
+
+  a.active {
+    background: #eee;
+  }
 }
 
 .full-message {
@@ -26,4 +30,8 @@
 .to {
   display: inline-block;
   margin: 0 10px;
+}
+
+.from {
+  font-weight: bold;
 }

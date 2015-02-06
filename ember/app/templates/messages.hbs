@@ -1,23 +1,23 @@
-  <div id="sidebar-wrapper" class="col-md-3">
-    <div id="sidebar">
-      <ul id="message-list" class="nav list-group">
-        {{#each message in model}}
-          <li>
-            {{#link-to 'message' message class=":read-message-link message.read:read"}}
-              <div class="pull-right">{{message.created_at }}</div>
-              <div class="from">{{message.sender}}</div>
-              <div class="subject">{{message.subject}}</div>
-              <div class="body">{{message.body}}</div>
-            {{/link-to}}
-          </li>
-        {{/each}}
-      </ul>
+<div id="sidebar-wrapper" class="col-md-3">
+  <div id="sidebar">
+    <ul id="message-list" class="nav list-group">
+      {{#each message in sortedMessages}}
+        <li>
+          {{#link-to 'message' message classNames="read-message-link" classNameBindings="message.read:read"}}
+            <div class="pull-right">{{formatted-date message.createdAt}}</div>
+            <div class="from">{{message.sender.fullName}}</div>
+            <div class="subject">{{message.subject}}</div>
+            <div class="body">{{truncated-string message.body length=100}}</div>
+          {{/link-to}}
+        </li>
+      {{/each}}
+    </ul>
+  </div>
+</div>
+<div id="main-wrapper" class="col-md-9 pull-right">
+  <div id="main">
+    <div class="page-header">
+      {{outlet}}
     </div>
   </div>
-  <div id="main-wrapper" class="col-md-9 pull-right">
-    <div id="main">
-      <div class="page-header">
-        {{outlet}}
-      </div>
-    </div>
-  </div>
+</div>

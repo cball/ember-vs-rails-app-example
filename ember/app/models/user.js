@@ -6,9 +6,10 @@ export default DS.Model.extend({
   email: DS.attr('string'),
   image: DS.attr('string'),
 
+  messages: DS.hasMany('message', { async: true, inverse: 'recipient' }),
+
   fullName: function() {
     return this.get('firstName') + ' ' + this.get('lastName');
-  }.property('firstName', 'lastName'),
+  }.property('firstName', 'lastName')
 
-  messages: DS.hasMany('message', { async: true, inverse: 'recipient' })
 });

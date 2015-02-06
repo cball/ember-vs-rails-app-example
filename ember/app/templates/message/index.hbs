@@ -2,12 +2,19 @@
   <div class="header">
     <div class="row">
       <div class="col-md-12">
-        <div class="pull-right">{{model.created_at}}</div>
+        <div class="pull-right">{{model.createdAt}}</div>
         <div class="subject">{{model.subject}}</div>
       </div>
     </div>
     <div>
-      <img class="sender-image" {{bind-attr src="model.sender.image"}}>{{model.sender}} <span class="to">to</span><img class="sender-image" {{bind-attr src="model.recipient.image"}}>{{model.recipient}}</div>
+      {{#with sender as user}}
+        {{partial 'users/user-info'}}
+      {{/with}}
+      <span class="to"> to </span>
+      {{#with recipient as user}}
+        {{partial 'users/user-info'}}
+      {{/with}}
+    </div>
   </div>
 
   <hr>

@@ -5,8 +5,15 @@ export default DS.Model.extend({
   body: DS.attr('string'),
   read: DS.attr('boolean'),
   deleted: DS.attr('boolean'),
-  created_at: DS.attr('date'),
+  createdAt: DS.attr('date'),
 
   sender: DS.belongsTo('user'),
-  recipient: DS.belongsTo('user')
+  recipient: DS.belongsTo('user'),
+
+  markAsRead: function() {
+    if (!this.get('read')) {
+      this.set('read', true);
+      this.save();
+    }
+  }
 });
