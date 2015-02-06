@@ -1,0 +1,14 @@
+<div class="full-message">
+  <div class="header">
+    <div class="pull-right"><%= @message.created_at %></div>
+    <div class="subject"><%= @message.subject %></div>
+    <div><%= render @message.sender %> to <%= render @message.recipient %></div>
+    <div> 
+  </div>
+
+  <hr>
+
+  <div class="body">
+    <%= @message.body %>
+  </div>
+</div>

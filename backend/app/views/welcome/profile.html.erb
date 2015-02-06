@@ -1,0 +1,11 @@
+<div class="profile">
+  <h2>My Profile</h2>
+
+  <div class="image"><%= image_tag @user.image %></div>
+  <div class="name">
+    <%= @user.first_name %> <%= @user.last_name %>
+  </div>
+  <div class="email">
+    <%= @user.email %>
+  </div>
+</div>

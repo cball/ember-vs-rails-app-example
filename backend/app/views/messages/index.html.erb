@@ -1,19 +1,11 @@
-  <div id="sidebar-wrapper" class="col-md-1">
+  <div id="sidebar-wrapper" class="col-md-3">
     <div id="sidebar">
-      <ul class="nav list-group">
-        <li>
-          <a class="list-group-item" href="#"><i class="icon-home icon-1x"></i>Sidebar Item 1</a>
-        </li>
-        <li>
-          <a class="list-group-item" href="#"><i class="icon-home icon-1x"></i>Sidebar Item 2</a>
-        </li>
-        <li>
-          <a class="list-group-item" href="#"><i class="icon-home icon-1x"></i>Sidebar Item 3</a>
-        </li>
+      <ul id="message-list" class="nav list-group">
+        <%= render @messages %>
       </ul>
     </div>
   </div>
-  <div id="main-wrapper" class="col-md-11 pull-right">
+  <div id="main-wrapper" class="col-md-9 pull-right">
     <div id="main">
       <div class="page-header">
         <h3>Messages</h3>

@@ -1,0 +1,8 @@
+<li>
+  <%= link_to message_url(message), remote: true do %>
+    <div class="pull-right"><%= message.created_at %></div>
+    <div class="from"><%= render message.sender %></div>
+    <div class="subject"><%= message.subject %></div>
+    <div class="body"><%= message.body[0, 100] %></div>
+  <% end %>
+</li>

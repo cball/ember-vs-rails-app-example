@@ -1,10 +1,11 @@
 class CreateMessages < ActiveRecord::Migration
   def change
     create_table :messages do |t|
-      t.string :title
+      t.string :subject
       t.text :body
-      t.references :sender
-      t.boolean :read
+      t.string :to
+      t.string :from
+      t.boolean :read, default: false
       t.boolean :deleted, default: false
 
       t.timestamps null: false
