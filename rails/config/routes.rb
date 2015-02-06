@@ -3,4 +3,9 @@ Rails.application.routes.draw do
   get 'profile' => 'welcome#profile'
 
   root 'welcome#index'
+
+  namespace :api do
+    resources :messages, only: [:index, :show]
+    resources :users, only: [:show]
+  end
 end
