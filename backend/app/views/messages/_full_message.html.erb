@@ -1,9 +1,12 @@
 <div class="full-message">
   <div class="header">
-    <div class="pull-right"><%= @message.created_at %></div>
-    <div class="subject"><%= @message.subject %></div>
-    <div><%= render @message.sender %> to <%= render @message.recipient %></div>
-    <div> 
+    <div class="row">
+      <div class="col-md-12">
+        <div class="pull-right"><%= @message.created_at %></div>
+        <div class="subject"><%= @message.subject %></div>
+      </div>
+    </div>
+    <div><%= image_tag @message.sender.image, class: 'sender-image' %><%= render @message.sender %> <span class="to">to</span> <%= image_tag @message.recipient.image, class: 'sender-image' %><%= render @message.recipient %></div>
   </div>
 
   <hr>
