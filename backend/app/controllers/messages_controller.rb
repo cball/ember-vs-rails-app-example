@@ -5,5 +5,6 @@ class MessagesController < ApplicationController
 
   def show
     @message = Message.find params[:id]
+    @message.update_attributes(read: true)
   end
 end

@@ -1,1 +1,4 @@
-$('#main').html('<%= j render 'full_message' %>')
+$('#main').html('<%= j render 'full_message' %>');
+
+<% unread_count = Message.unread.count %>
+$('#unread-count').text(<%= unread_count %>);

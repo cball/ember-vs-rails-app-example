@@ -19,7 +19,9 @@
     <nav class="collapse navbar-collapse">
       <ul class="nav navbar-nav">
         <li>
-          <%= link_to 'Inbox', messages_path %>
+          <%= link_to messages_path do %>
+            Inbox <span id="unread-count" class="badge"><%= Message.unread.count %></span>
+          <% end %>
         </li>
         <li>
           <%= link_to 'Profile', profile_path %>

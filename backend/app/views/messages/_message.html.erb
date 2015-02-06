@@ -1,5 +1,6 @@
 <li>
-  <%= link_to message_url(message), remote: true do %>
+  <% is_read_css = message.read ? 'read' : '' %>
+  <%= link_to message_url(message), remote: true, class: "read-message-link #{is_read_css}" do %>
     <div class="pull-right"><%= message.created_at %></div>
     <div class="from"><%= render message.sender %></div>
     <div class="subject"><%= message.subject %></div>
