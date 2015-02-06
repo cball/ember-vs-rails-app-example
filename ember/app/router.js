@@ -6,7 +6,9 @@ var Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-  this.resource("messages", function() {});
+  this.resource("messages", function() {
+    this.resource("message",{ path: '/:message_id' }, function() {});
+  });
   this.resource("profile", function() {});
 });
 

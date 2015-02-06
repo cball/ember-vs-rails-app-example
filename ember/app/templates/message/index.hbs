@@ -1,0 +1,18 @@
+<div class="full-message">
+  <div class="header">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="pull-right">{{model.created_at}}</div>
+        <div class="subject">{{model.subject}}</div>
+      </div>
+    </div>
+    <div>
+      <img class="sender-image" {{bind-attr src="model.sender.image"}}>{{model.sender}} <span class="to">to</span><img class="sender-image" {{bind-attr src="model.recipient.image"}}>{{model.recipient}}</div>
+  </div>
+
+  <hr>
+
+  <div class="body">
+    {{model.body}}
+  </div>
+</div>

@@ -1,0 +1,29 @@
+#message-list {
+  a {
+    color: #333;
+  }
+
+  a.read {
+    color: #999;
+  }
+}
+
+.full-message {
+  padding: 20px;
+
+  .subject {
+    font-weight: bold;
+    font-size: 2em;
+  }
+}
+
+.sender-image {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.to {
+  display: inline-block;
+  margin: 0 10px;
+}
