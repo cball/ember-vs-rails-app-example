@@ -1,7 +1,8 @@
 module Api
   class MessagesController < ApplicationController
     def index
-      messages = Message.all
+      # obviously, this is not secure enough for real life
+      messages = Message.where(recipient_id: params[:user_id])
       render json: messages
     end
 
