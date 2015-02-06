@@ -1,7 +1,8 @@
 module Api
-  class MessagesController < ApplicationController
+  class MessagesController < BaseController
+
+    # obviously, this is not secure enough for real life
     def index
-      # obviously, this is not secure enough for real life
       messages = Message.where(recipient_id: params[:user_id])
       render json: messages
     end
@@ -10,5 +11,14 @@ module Api
       message = Message.find params[:id]
       render json: message
     end
+
+    def update
+      message = Message.find params[:id]
+      message.read = params[:message][:read]
+      message.save
+
+      render json: message
+    end
   end
+
 end

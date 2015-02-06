@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   root 'welcome#index'
 
   namespace :api do
-    resources :messages, only: [:index, :show]
+    resources :messages, only: [:index, :show, :update]
     resources :users, only: [:show]
   end
 end
