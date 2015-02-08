@@ -9,7 +9,7 @@
     <ul class="nav navbar-nav">
       <li>
         {{#link-to 'messages.index'}}
-          Inbox <span id="unread-count" {{bind-attr class=":badge :alert-success showUnreadCount::invisible"}}>{{unreadMessages.length}}</span>
+          Inbox <span id="unread-count" {{bind-attr class=":badge :alert-success showUnreadCount::invisible"}}>{{unreadMessageCount}}</span>
         {{/link-to}}
       </li>
       <li>
