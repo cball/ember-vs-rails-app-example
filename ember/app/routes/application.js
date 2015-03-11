@@ -8,6 +8,6 @@ export default Ember.Route.extend({
 
   setupController: function(controller, model) {
     this._super();
-    controller.set('messages', model.get('messages'))
+    controller.set('messages', model.get('messages'));
   }
 });
